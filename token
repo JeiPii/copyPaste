@@ -1,3 +1,7 @@
+
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+
 curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true
  
 run this changing access token to the token you got before
@@ -5,6 +9,9 @@ run this changing access token to the token you got before
 curl https://management.azure.com/subscriptions/91e6f3c9-f4b5-4ca5-8990-2a21a6ac6f0f
 /resourceGroups/ASWG-EUWE-RG-PWCRACKING/providers/Microsoft.Storage/storageAccounts/aswgsapw/listKeys?api-version=2016-12-01 --request POST -d "" -H "Authorization: Bearer <ACCESS TOKEN>"
  
+
+
+
 after install the az cli tools run the below to down a file e.g. ntds.dit
  
 az storage blob download -c ntdstransport/ntds -n ntds.dit -f ntds.dit --account-name aswgsapw --account-key C9SvGUlPWLSFXBJAFBCZj734/dBMOTyy4H8mUK7EwUWA2mx5WiGFMEKY3uzEdu+8eR5h2Y/LLfp1+AStTp4AiQ==
