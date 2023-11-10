@@ -2,7 +2,7 @@
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 
-curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true
+curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Faswsec.onmicrosoft.com%2F' -H Metadata:true
  
 run this changing access token to the token you got before
  
