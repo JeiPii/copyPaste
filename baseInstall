@@ -38,6 +38,9 @@ python3 -m pip install --user pipx
 python3 -m pipx ensurepath 
 pipx completions
 
+# get postInstall
+wget https://raw.githubusercontent.com/JeiPii/copyPaste/main/postInstall ~/postInstall
+
 # Reboot (recommended by CUDA installers)
 reboot
 
