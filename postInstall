@@ -1,0 +1,24 @@
+# Impacket better reboot so pipx completion can actually complete.
+python3 -m pipx install impacket
+python3 -m pipx install .
+
+# Wordlists change to correct path.
+wget https://raw.githubusercontent.com/stealthsploit/OneRuleToRuleThemStill/main/OneRuleToRuleThemStill.rule /hdd/rules 
+
+#wordlists big
+wget https://download.weakpass.com/wordlists/1927/cyclone.hashesorg.hashkiller.combined.txt.7z /hdd/wordlist
+wget https://hashmob.net/api/v2/downloads/research/official/hashmob.net_2023-11-26.found.7z /hdd/wordlist
+
+#wordlist for combinations
+wget https://download.weakpass.com/wordlists/1937/ignis-1M.txt.7z /hdd/wordlist
+wget https://download.weakpass.com/wordlists/50/10_million_password_list_top_1000000.txt.gz /hdd/wordlist
+wget https://download.weakpass.com/wordlists/837/English.dic.gz /hdd/wordlist
+wget https://download.weakpass.com/wordlists/90/rockyou.txt.gz /hdd/wordlist
+wget https://download.weakpass.com/wordlists/1701/BestByChesteRock3.txt.gz /hdd/wordlist
+wget https://hashmob.net/api/v2/downloads/research/official/hashmob.net_2023-11-26.tiny.found.7z /hdd/wordlist
+wget https://gist.githubusercontent.com/deekayen/4148741/raw/98d35708fa344717d8eee15d11987de6c8e26d7d/1-1000.txt /hdd/wordlist
+
+
+# !! ABSOLUTE MASSIVE LIST !! ONLY DOWNLAOD WHEN YOU HAVE MORE THAN 500 GB
+# https://weakpass.com/wordlist/1948
+# wget https://download.weakpass.com/wordlists/1948/weakpass_3a.7z /hdd/wordlst
