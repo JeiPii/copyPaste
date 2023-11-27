@@ -3,7 +3,7 @@ set -e
 DEBIAN_FRONTEND=noninteractive
 
 # Install required packages
-apt update && apt install -y apt-transport-https build-essential
+apt update && apt install -y apt-transport-https build-essential tmux p7zip-full python3.10-venv
 
 # Blacklist nouveau drivers
 cat <<EOT >> /etc/modprobe.d/nouveau.conf
@@ -26,19 +26,20 @@ tar -xf ${HASHCAT_SRC_PKG}.tar.gz
 cd ${HASHCAT_SRC_PKG}
 make && make install
 
-# Install John the Ripper
-snap install john-the-ripper
+# Install azcopy
+wget https://aka.ms/downloadazcopy-v10-linux
+tar -vxf downloadazcopy-v10-linux
+sudo cp ./azcopy_linux_amd64_*/azcopy /usr/bin/
 
-# Install and reference some wordlists
-wget --quiet -O /opt/rockyou.txt https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
-
-cat <<EOF > /opt/wordlists.txt
-Get some additional wordlists here:
-* https://weakpass.com/download
-* https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
-* https://github.com/danielmiessler/SecLists
-* https://github.com/FlameOfIgnis/Pwdb-Public
-EOF
+# PIP install and pipx
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath 
+pipx completions
 
 # Reboot (recommended by CUDA installers)
 reboot
+
+
+
